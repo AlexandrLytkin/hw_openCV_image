@@ -3,7 +3,9 @@ import numpy as np
 
 photo = np.zeros(shape=(600, 1200, 3), dtype='uint8')
 # color field
-cv2.rectangle(photo, (0, 0), (photo.shape[1], photo.shape[0]), (86, 110, 7), thickness=cv2.FILLED)
+for i in range(100):
+    cv2.rectangle(photo, (i, i), (photo.shape[1]-i, photo.shape[0]-i), (22, 201, 22+i), thickness=cv2.FILLED)
+
 # emblem soccer club
 cv2.circle(photo, (photo.shape[1]//2, photo.shape[0]//2), 80, (255, 255, 255), 2)
 cv2.ellipse(img=photo, center=(photo.shape[1]//2, photo.shape[0]//2), axes=(40, 40), angle=0., startAngle=0, endAngle=180, color=(0,255,0),thickness=3)
