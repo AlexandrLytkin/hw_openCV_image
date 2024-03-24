@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 photo = np.zeros(shape=(600, 1200, 3), dtype='uint8')
-# color field
+# color field with bonus gradient
 for i in range(100):
     cv2.rectangle(photo, (i, i), (photo.shape[1]-i, photo.shape[0]-i), (22, 201, 22+i), thickness=cv2.FILLED)
 
@@ -33,7 +33,6 @@ cv2.ellipse(img=photo, center=(5, 5), axes=(40, 40), angle=0., startAngle=0, end
 cv2.ellipse(img=photo, center=(photo.shape[1]-5, 5), axes=(40, 40), angle=90., startAngle=0, endAngle=90, color=(255, 255, 255), thickness=2)
 cv2.ellipse(img=photo, center=(5, photo.shape[0]-5), axes=(40, 40), angle=270., startAngle=0, endAngle=90, color=(255, 255, 255), thickness=2)
 cv2.ellipse(img=photo, center=(photo.shape[1]-5, photo.shape[0]-5), axes=(40, 40), angle=180., startAngle=0, endAngle=90, color=(255, 255, 255), thickness=2)
-
 
 cv2.imshow('soccer field', photo)
 cv2.waitKey(0)
